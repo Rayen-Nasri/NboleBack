@@ -10,7 +10,10 @@ dotenv.config()
 const app = express();
 app.use(express.json());
 
-app.use(cors())
+app.use(cors({
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  credentials: true,
+}));
 app.use(cookieParser())
 
 app.use("/api/auth" , autRoutes);
