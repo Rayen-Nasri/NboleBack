@@ -11,9 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  credentials: true,
-}));
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]}));
 app.use(cookieParser())
 
 app.use("/api/auth" , autRoutes);
