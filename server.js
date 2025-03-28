@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: true,  // This will reflect the request origin
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']
