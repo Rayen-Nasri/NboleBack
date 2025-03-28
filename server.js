@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://noble-nurturing.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']
