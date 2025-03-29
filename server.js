@@ -11,8 +11,12 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://noble-nurturing.netlify.app']
+    : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
 }));
 app.use(cookieParser())
 
